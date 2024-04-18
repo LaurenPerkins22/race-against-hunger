@@ -1,0 +1,283 @@
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+  --background: #8093A0;
+  --accent-color: #EA5819;
+  --primary-dark: #283C49;
+  --gray100: #F8F8F8;
+}
+
+
+
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+/* Navigation for moblile goes here */
+
+.navigation {
+  background: var(--background);
+  text-align: right;
+  padding: 1em;
+  position: sticky;
+ top:0;
+  z-index: 999;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-toggle-label span {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1,0);
+  transition: transform 400ms ease-in-out;
+  transform-origin: top;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+
+
+
+
+nav a:hover {
+  color: black;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query for desktop*/
+
+@media screen and (min-width: 600px){
+  .nav-toggle-label {
+    display: none;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav {
+    all:unset;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  
+/*   add line above or below selectoin on hover */
+  
+  nav a::before {
+    content:"";
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right:0;
+    
+    transform: scale(0,1);
+    transition: transform ease-in-out 250ms;
+    transform-origin: left;
+    
+  }
+  
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+  
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+   
+  }
+  
+  
+  
+  .form-container {
+    width: 1000px;
+    margin: 100px auto 0;
+    display: flex;
+    filter: drop-shadow(5px 5px 0.5rem #999);
+  }
+  
+  .form-photo {
+    width: 400px;
+    background: #333;
+    background-image: url("images/5k-race-image.jpg");
+    
+  }
+  .form-content {
+    text-align: center;
+  }
+  
+  
+  form {
+    width: 700px;
+    background: #EA5819;
+    padding: 3em;
+  }
+  
+  form div {
+    margin: 15px;
+  }
+  
+  
+  
+  label {
+    line-height: 2.5;
+    font-size: .8em;
+  }
+  
+  form input {
+    padding: 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    border-left: 4px solid #000;
+    background: rgba(255,255,255,.4);
+  }
+  
+  .agree input{
+   width: auto;
+  }
+  
+  button {
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 25px;
+    border: none;
+    background: #7393B3;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  
+  
+  button:hover {
+  background: #000000;
+  }
+
+
+  .image {
+    width: 400px;
+  }

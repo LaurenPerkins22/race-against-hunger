@@ -1,1 +1,1 @@
-# race-against-hunger
+# event-website-project
